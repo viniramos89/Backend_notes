@@ -19,7 +19,7 @@ class UserAvatarController {
     }
 
     const filename = await diskStorage.saveFile(avatarFilename); // novo avatar
-    user .avatar = filename;
+    user.avatar = filename;
 
     await knex("users").update(user).where({id: user_id});
 
